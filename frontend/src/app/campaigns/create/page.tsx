@@ -45,7 +45,7 @@ const FormulareCampaigns = () => {
                 targetCountries: formData.targetCountries.split(',').map(c=>c.trim().toUpperCase())
             })
             toast.success('Campagne crée avec succès !');
-            router.push('/campaigns');
+            router.push('/campaigns/listeCampaigns');
         } catch (error) {
             toast.error("Erreur lors de la création");
             console.error(error);
