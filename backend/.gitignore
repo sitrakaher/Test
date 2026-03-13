@@ -1,5 +1,20 @@
+# Dépendances
 node_modules
-# Keep environment variables out of version control
+
+# Variables d'environnement
 .env
 
+# Build TypeScript
+dist
+
+# Prisma généré
 /src/generated/prisma
+/prisma/generated
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
