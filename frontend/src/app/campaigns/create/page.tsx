@@ -1,6 +1,6 @@
 "use client";
 import { createCampaign } from '@/lib/api';
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation';
 import React, { FormEvent, useState } from 'react'
 import { toast } from 'react-toastify';
 
@@ -44,6 +44,8 @@ const FormulareCampaigns = () => {
                 budget:Number(formData.budget),
                 targetCountries: formData.targetCountries.split(',').map(c=>c.trim().toUpperCase())
             })
+            toast.success('Campagne crée avec succès !');
+            router.push('/campaigns');
         } catch (error) {
             toast.error("Erreur lors de la création");
             console.error(error);
