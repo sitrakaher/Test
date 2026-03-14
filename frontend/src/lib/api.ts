@@ -1,7 +1,7 @@
 import { CampaignFilters, CreateCampaignData } from "@/types/typeCampaigns";
 import axios from "axios";
 const Api = axios.create({
-    baseURL:'http://localhost:4000',
+    baseURL: process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:4000',
 });
 
 export const getCampaigns = (filters?:CampaignFilters) =>{

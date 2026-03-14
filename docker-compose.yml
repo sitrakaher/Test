@@ -1,0 +1,43 @@
+services:
+  mongo:
+    image: mongo:8
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - adtech-network
+
+  backend:
+    build: ./backend
+    container_name: backend
+    ports:
+      - "4000:4000"
+    environment:
+      - PORT=4000
+      - DATABASE_URL=mongodb://mongo:27017/TestAdTech
+      - FRONTEND_URL=http://localhost:3000
+    depends_on:
+      - mongo
+    networks:
+      - adtech-network
+
+  frontend:
+    build: ./frontend
+    container_name: frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:4000
+    depends_on:
+      - backend
+    networks:
+      - adtech-network
+    
+volumes:
+ mongo_data:
+
+networks:
+  adtech-network:
+    driver: bridge
