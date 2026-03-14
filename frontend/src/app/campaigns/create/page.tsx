@@ -52,35 +52,35 @@ const FormulareCampaigns = () => {
         }
     }
   return (
-    <div>
-        <h1>Créer une campagne</h1>
-        <form onSubmit={handelSubmit} className='p-6 flex item-center justify-center'>
-            <div>
+    <div className='h-screen w-full flex items-center justify-center flex-col gap-6'>
+        <h1 className='text-2xl font-bold text-cyan-300'>Créer une campagne</h1>
+        <form onSubmit={handelSubmit} className='p-6 border border-cyan-400 w-fit flex flex-col item-center justify-center shadow-2xl shadow-gray-500 rounded'>
+            <div className='flex items-center justify-center  flex-col'>
                 <label htmlFor="nom">Nom</label>
-                <input type="text" name="name" id="nom" value={formData.name} onChange={handleChange} placeholder='ex: Summer Campaign'/>
+                <input type="text" name="name" id="nom" value={formData.name} onChange={handleChange} placeholder='ex: Summer Campaign' className='border border-gray-200 p-2 rounded focus:outline-none w-full'/>
             </div>
-            <div>
+            <div className='flex items-center justify-center  flex-col'>
                 <label htmlFor="annonceur">Annonceur</label>
-                <input type="text" name="advertiser" id="annonceur" value={formData.advertiser} onChange={handleChange} placeholder='ex: Nike'/>
+                <input type="text" name="advertiser" id="annonceur" value={formData.advertiser} onChange={handleChange} placeholder='ex: Nike' className='border border-gray-200 p-2 rounded focus:outline-none w-full'/>
             </div>
-            <div>
+            <div className='flex items-center justify-center  flex-col'>
                 <label htmlFor="startDate">Date de début</label>
-                <input type="date" name="startDate" id="startDate" value={formData.startDate} onChange={handleChange}/>
+                <input type="date" name="startDate" id="startDate" value={formData.startDate} onChange={handleChange} className='border border-gray-200 p-2 rounded focus:outline-none w-full'/>
             </div>
-            <div>
+            <div className='flex items-center justify-center  flex-col'>
                 <label htmlFor="endDate">Date de fin</label>
-                <input type="date" name="endDate" id="endDate" value={formData.endDate} onChange={handleChange}/>
+                <input type="date" name="endDate" id="endDate" value={formData.endDate} onChange={handleChange} className='border border-gray-200 p-2 rounded focus:outline-none w-full'/>
             </div>
-            <div>
+            <div className='flex items-center justify-center  flex-col'>
                 <label htmlFor="budget">Budget (€)</label>
-                <input type="number" name="budget" id="budget" value={formData.budget} onChange={handleChange} placeholder='ex: 1000'/>
+                <input type="number" name="budget" id="budget" value={formData.budget} onChange={handleChange} placeholder='ex: 1000' className='border border-gray-200 p-2 rounded focus:outline-none w-full'/>
             </div>
-            <div>
+            <div className='flex items-center justify-center flex-col'>
                 <label htmlFor="targetCountries">Pays cibles (séparés par des virgules)</label>
-                <input type="text" name="targetCountries" id="targetCountries" value={formData.targetCountries} onChange={handleChange} placeholder='ex: FR, ES, DE'/>
+                <input type="text" name="targetCountries" id="targetCountries" value={formData.targetCountries} onChange={handleChange} placeholder='ex: FR, ES, DE' className='border border-gray-200 p-2 rounded focus:outline-none w-full'/>
             </div>
 
-            <button type="submit">Créer la campagne</button>
+            <button type="submit" className='p-2 bg-cyan-400 text-white font-semibold my-2 rounded hover:bg-cyan-300 w-full flex items-center justify-center'>Créer la campagne</button>
         </form>
     </div>
   )

@@ -29,31 +29,32 @@ const DashBoardStats = () =>{
     }, [])
 
     return(
-        <div>
-            <h1>Dashboard Statistiques</h1>
-            {errors && <p>{errors}</p>}
+        <div className="h-screen items-start flex flex-col p-10">
+            <h1 className="text-2xl font-bold text-cyan-400">Dashboard Statistiques</h1>
+            <div className="p-2">
+                {errors && <p className="text-red-500">{errors}</p>}
             <table>
                 <thead>
-                    <tr>
-                        <th>Total Campagnes</th>
-                        <th>Campagnes Actives</th>
-                        <th>Impressions Totales</th>
-                        <th>Top Advertiser</th>
+                    <tr className="border-b border-amber-200 p-2">
+                        <th className="border-l border-amber-200 p-2">Total Campagnes</th>
+                        <th className="border-l border-amber-200 p-2">Campagnes Actives</th>
+                        <th className="border-l border-amber-200 p-2">Impressions Totales</th>
+                        <th className="border-l border-amber-200 border-r p-2">Top Advertiser</th>
                     </tr>
                 </thead>
                 <tbody>
                     {loading?
                     (
-                        <tr>
-                            <td colSpan={4}>Chargement des statistiques...</td>
+                        <tr >
+                            <td colSpan={4}  className="flex items-center justify-center">Chargement des statistiques...</td>
                         </tr>
                     ): !listesStatistque ?(
                         <tr>
-                            <td colSpan={4}>Aucune statistiques trouvée</td>
+                            <td colSpan={4} className="flex items-center justify-center">Aucune statistiques trouvée</td>
                         </tr>
                     ):
                     (
-                        <tr>
+                        <tr className="border-b border-amber-200 p-2">
                             <td>{listesStatistque.totalCampaigns}</td>
                             <td>{listesStatistque.activeCampaigns}</td>
                             <td>{listesStatistque.totalImpressions}</td>
@@ -62,6 +63,7 @@ const DashBoardStats = () =>{
                     )}
                 </tbody>
             </table>
+            </div>
         </div>
     )
 }

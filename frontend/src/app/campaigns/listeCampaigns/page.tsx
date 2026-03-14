@@ -29,37 +29,37 @@ const ListeCampaign = () =>{
     }, []);
 
     return(
-        <div>
+        <div className="h-screen items-start flex flex-col p-10">
             <div>
-                <h1>Liste des campagnes</h1>
+                <h1 className="text-cyan-400 text-2xl font-bold">Liste des campagnes</h1>
                 <Link href="/campaigns/create">
-                    <button>Créer une campagne</button>
+                    <button className="bg-emerald-500 text-white p-2 rounded font-semibold m-4">+ Créer une campagne</button>
                 </Link>
             </div>
 
-            {errors && <p>{errors}</p>}
+            {errors && <p className="text-red-500">{errors}</p>}
             <table>
                 <thead>
-                    <tr>
-                        <th>Nom</th>
-                        <th>Annoncuer</th>
-                        <th>Statut</th>
-                        <th>Impressions</th>
-                        <th>Budget</th>
+                    <tr className="border-b border-amber-200 p-2">
+                        <th className="border-l border-amber-200 p-2">Nom</th>
+                        <th className="border-l border-amber-200 p-2">Annoncuer</th>
+                        <th className="border-l border-amber-200 p-2">Statut</th>
+                        <th className="border-l border-amber-200 p-2">Impressions</th>
+                        <th className="border-l border-r border-amber-200 p-2">Budget</th>
                     </tr>
                 </thead>
                 <tbody>
                     {loading ? (
                         <tr>
-                            <td colSpan={5}>Chargement des campagnes...</td>
+                            <td colSpan={5} className="flex items-center justify-center">Chargement des campagnes...</td>
                         </tr>
                     ): listeCampaigns.length === 0 ?(
                         <tr>
-                            <td colSpan={5}>Aucune campagnes trouvée</td>
+                            <td colSpan={5} className="flex items-center justify-center">Aucune campagnes trouvée</td>
                         </tr>
                     ):(
                         listeCampaigns.map((campaign) =>(
-                            <tr key={campaign.id}>
+                            <tr key={campaign.id} >
                                 <td>{campaign.name}</td>
                                 <td>{campaign.advertiser}</td>
                                 <td>{campaign.status}</td>
