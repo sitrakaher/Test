@@ -54,7 +54,7 @@ const FormulareCampaigns = () => {
   return (
     <div>
         <h1>Créer une campagne</h1>
-        <form onSubmit={handelSubmit}>
+        <form onSubmit={handelSubmit} className='p-6 flex item-center justify-center'>
             <div>
                 <label htmlFor="nom">Nom</label>
                 <input type="text" name="name" id="nom" value={formData.name} onChange={handleChange} placeholder='ex: Summer Campaign'/>

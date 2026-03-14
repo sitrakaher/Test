@@ -117,9 +117,9 @@ POST /serve-ad -> lire depuis Redis (TTL 60s) au lieu de requêter MongoDB à ch
 ### 2. Load Balancer + plusieurs instances
 ```
 Nginx
-    -Instance 1 -> traite 400 000 requêtes
-    -Instance 2 -> traite 400 000 requêtes
-    -Instance 3 -> traite 400 000 requêtes
+    - Instance 1 -> traite 400 000 requêtes
+    - Instance 2 -> traite 400 000 requêtes
+    - Instance 3 -> traite 400 000 requêtes
 ```
 
 ### 3. Inex MongoDB
