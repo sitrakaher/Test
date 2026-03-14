@@ -2,7 +2,6 @@
 
 import { getCampaigns } from "@/lib/api";
 import { Campaign } from "@/types/typeCampaigns";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const ListeCampaign = () =>{
@@ -30,13 +29,7 @@ const ListeCampaign = () =>{
 
     return(
         <div className="h-screen items-start flex flex-col p-10">
-            <div>
-                <h1 className="text-cyan-400 text-2xl font-bold">Liste des campagnes</h1>
-                <Link href="/campaigns/create">
-                    <button className="bg-emerald-500 text-white p-2 rounded font-semibold m-4">+ Créer une campagne</button>
-                </Link>
-            </div>
-
+           <h1 className="text-cyan-400 text-2xl font-bold">Liste des campagnes</h1>
             {errors && <p className="text-red-500">{errors}</p>}
             <table>
                 <thead>
@@ -51,11 +44,11 @@ const ListeCampaign = () =>{
                 <tbody>
                     {loading ? (
                         <tr>
-                            <td colSpan={5} className="flex items-center justify-center">Chargement des campagnes...</td>
+                            <td colSpan={5} className="text-center p-2">Chargement des campagnes...</td>
                         </tr>
                     ): listeCampaigns.length === 0 ?(
                         <tr>
-                            <td colSpan={5} className="flex items-center justify-center">Aucune campagnes trouvée</td>
+                            <td colSpan={5} className="text-center p-2">Aucune campagnes trouvée</td>
                         </tr>
                     ):(
                         listeCampaigns.map((campaign) =>(

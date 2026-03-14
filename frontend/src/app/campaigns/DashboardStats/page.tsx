@@ -46,11 +46,11 @@ const DashBoardStats = () =>{
                     {loading?
                     (
                         <tr >
-                            <td colSpan={4}  className="flex items-center justify-center">Chargement des statistiques...</td>
+                            <td colSpan={4}  className="text-center p-2">Chargement des statistiques...</td>
                         </tr>
                     ): !listesStatistque ?(
                         <tr>
-                            <td colSpan={4} className="flex items-center justify-center">Aucune statistiques trouvée</td>
+                            <td colSpan={4} className="text-center p-2">Aucune statistiques trouvée</td>
                         </tr>
                     ):
                     (
